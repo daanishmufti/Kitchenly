@@ -1,0 +1,32 @@
+.home-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.home-snap-container {
+  min-height: 100vh;
+  height: auto;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #ffb347 0%, #ffd6d6 60%, #ffecd2 100%);
+  background-size: 200% 200%;
+  animation: desi-gradient-move 8s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes desi-gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.snap-section {
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+

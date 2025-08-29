@@ -1,0 +1,49 @@
+.suspense-fallback-bg {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffb347 0%, #ffd6d6 60%, #ffecd2 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.suspense-fallback-spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ffe0b2;
+  border-top: 5px solid #2d7a46;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.suspense-fallback-text {
+  color: #2d7a46;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 8px #fff7;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.background-details {
+  background: linear-gradient(135deg, #fffbe6, #ffb347);
+  min-height: 100vh;
+  padding: 2rem;
+}

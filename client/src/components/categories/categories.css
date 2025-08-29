@@ -1,0 +1,150 @@
+.categories-container {
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #ffe5b4 0%, #ffb347 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(255, 140, 0, 0.12);
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.categories-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #b85c00;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  font-family: 'Baloo Bhai 2', cursive;
+}
+
+.categories-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.category-btn {
+  background: #fffbe6;
+  color: #b85c00;
+  border: 2px solid #ffd580;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-family: 'Baloo Bhai 2', cursive;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  outline: none;
+}
+.category-btn.active,
+.category-btn:hover {
+  background: #ffb347;
+  color: #fff;
+  border-color: #ffb347;
+}
+
+.categories-search-order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.categories-search {
+  padding: 0.5rem 1rem;
+  border-radius: 1.2rem;
+  border: 2px solid #ffd580;
+  font-size: 1rem;
+  font-family: 'Baloo Bhai 2', cursive;
+  outline: none;
+  width: 220px;
+}
+
+.categories-order {
+  padding: 0.5rem 1rem;
+  border-radius: 1.2rem;
+  border: 2px solid #ffd580;
+  font-size: 1rem;
+  font-family: 'Baloo Bhai 2', cursive;
+  outline: none;
+  background: #fffbe6;
+  color: #b85c00;
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 320px));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.category-card {
+  background: linear-gradient(120deg, #fffbe6 60%, #ffe5b4 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(255, 140, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border: 2px solid #ffd580;
+}
+
+.category-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(255, 140, 0, 0.18);
+  border-color: #ffb347;
+}
+
+.category-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(255, 140, 0, 0.10);
+  margin-bottom: 1rem;
+}
+
+.category-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b85c00;
+  text-align: center;
+  font-family: 'Baloo Bhai 2', cursive;
+  letter-spacing: 0.5px;
+  margin-top: 0.2rem;
+}
+
+.categories-loading,
+.categories-error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #b85c00;
+  margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+  .categories-bar {
+    gap: 0.4rem;
+  }
+  .categories-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .category-card {
+    padding: 0.8rem 0.5rem 0.7rem 0.5rem;
+  }
+  .category-img {
+    height: 90px;
+  }
+  .categories-title {
+    font-size: 1.5rem;
+  }
+  .categories-search {
+    width: 120px;
+  }
+}
