@@ -1,24 +1,39 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'
 import './navebar.css'
 
 const Navebar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollTo = (id) => (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 400);
+    }
+  };
+
   return (
     <div className='container'>
         <div className='wrapper'>
-            <Link className='left'>
+            <Link className='left' to='/'>
                 Kitchenly
             </Link>
             <ul className='center'>
                 <li>
-                  <Link to='/' className='listitem'>Home</Link>
+                  <a href='#' className='listitem' onClick={(e) => { e.preventDefault(); if (location.pathname === '/') { window.scrollTo({ top: 0, behavior: 'smooth' }); } else { navigate('/'); } }}>Home</a>
                 </li>
                 <li>
-                    <Link to='/about' className='listitem'>About</Link>
+                    <a href='#about' className='listitem' onClick={scrollTo('about')}>About</a>
                 </li>
                 <li>
-                    <Link to='/' className='listitem'>Contact</Link>
+                    <a href='#contact' className='listitem' onClick={scrollTo('contact')}>Contact</a>
                 </li>
             </ul>
             <div className='right'>

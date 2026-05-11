@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 import Hero from '../hero/hero.jsx'
-import Categories from '../categories/categories.jsx' 
+import Categories from '../categories/categories.jsx'
 import Favouritefoods from '../favouritefoods/favouritefoods.jsx'
+import About from '../about/about.jsx'
+import Contact from '../contact/contact.jsx'
 import './home.css'
 
 const Home = () => {
@@ -100,8 +102,14 @@ const Home = () => {
       <section className="snap-section" ref={sectionRefs[1]}>
         <Favouritefoods />
       </section>
-      <section>
+      <section id="categories">
         <Categories />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
     </div>
   )

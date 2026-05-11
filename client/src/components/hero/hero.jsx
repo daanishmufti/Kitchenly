@@ -82,8 +82,8 @@ const renderBackgrounds = () => {
         <p className="hero-highlight">You've come to the right place for some tasty recipes</p>
         <p className="hero-desc">Just see what we have for you</p>
         <div className="hero-btns">
-          <button className="hero-btn primary">Get Started</button>
-          <button className="hero-btn secondary">Explore recipes</button>
+          <button className="hero-btn primary" onClick={() => document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' })}>Get Started</button>
+          <button className="hero-btn secondary" onClick={() => document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' })}>Explore recipes</button>
         </div>
       </div>
       <div className="hero-right">

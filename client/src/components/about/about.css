@@ -1,59 +1,61 @@
 .about-container {
-  min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  padding: 5.5rem 0 2rem 0;
-  background: none;
+  align-items: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #fff8f0 0%, #ffe5b4 100%);
   box-sizing: border-box;
 }
 
-.about-container::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://ziykarestaurant-com-au.b-cdn.net/wp-content/uploads/2020/04/best-desi-food-in-carlton.jpg') center center/cover no-repeat;
-  background-attachment: fixed;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .about-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 2.5rem 2rem;
-  max-width: 500px;
-  width: 90%;
+  background: #fffbe6;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(255, 140, 0, 0.15);
+  border: 2px solid #ffd580;
+  padding: 2.8rem 2.5rem;
+  max-width: 620px;
+  width: 100%;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 
 .about-card h1 {
-  color: #2d7a46;
-  margin-bottom: 1.2rem;
-  font-size: 2.2rem;
+  color: #b23c17;
+  margin-bottom: 1.1rem;
+  font-size: 2.3rem;
+  font-family: 'Baloo Bhai 2', cursive;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-card h2 {
+  color: #b85c00 !important;
+  font-family: 'Baloo Bhai 2', cursive;
+  font-size: 1.25rem !important;
+  margin-bottom: 0.6rem !important;
 }
 
 .about-card p {
-  color: #444;
+  color: #5a3300;
   margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-family: 'Baloo Bhai 2', cursive;
+}
+
+.about-card ul {
+  color: #5a3300 !important;
+  font-family: 'Baloo Bhai 2', cursive;
+}
+
+.about-card hr {
+  border-top: 2px dashed #ffd580 !important;
 }
 
 @media (max-width: 600px) {
   .about-card {
-    padding: 1.2rem 0.5rem;
-    font-size: 1rem;
+    padding: 1.5rem 1rem;
   }
   .about-card h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
