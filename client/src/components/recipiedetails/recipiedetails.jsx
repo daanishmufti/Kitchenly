@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import './recipiedetails.css'
-import recipeData from '../../data/recipeData'
+import { supabase } from '../../lib/supabase'
 
 const Recipiedetails = () => {
   const [recipe, setRecipe] = useState(null);
@@ -9,10 +9,20 @@ const Recipiedetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    
-    if(id && recipeData[id])
-    {
-      setRecipe(recipeData[id]);
+
+    const fetchRecipe = async () => {
+      const { data, error } = await supabase
+        .from('recipes')
+        .select('*')
+        .eq('id', id)
+        .single()
+      if (!error && data) {
+        setRecipe(data);
+      }
+    }
+
+    if (id) {
+      fetchRecipe();
     }
   }, [id]);
 

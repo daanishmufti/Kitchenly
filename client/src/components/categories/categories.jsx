@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './categories.css'
-import recipeData from '../../data/recipeData'
+import { supabase } from '../../lib/supabase'
 
 const categoriesData = [
   { id: 1, name: 'Meat'},
@@ -12,18 +12,24 @@ const categoriesData = [
   { id: 6, name: 'Drinks'},
 ]
 
-const foodsData = Object.values(recipeData).map(recipe => ({
-  id: recipe.id,
-  name: recipe.name,
-  category: recipe.category,
-  img: recipe.image
-}))
-
 const Categories = () => {
+  const [foodsData, setFoodsData] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [search, setSearch] = useState('')
   const [order, setOrder] = useState('asc')
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const { data, error } = await supabase
+        .from('recipes')
+        .select('id, name, category, image')
+      if (!error && data) {
+        setFoodsData(data.map(r => ({ id: r.id, name: r.name, category: r.category, img: r.image })))
+      }
+    }
+    fetchRecipes()
+  }, [])
 
   const filteredFoods = foodsData
     .filter(food => (selectedCategory === 'All' || food.category === selectedCategory))

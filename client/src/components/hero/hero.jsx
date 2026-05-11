@@ -3,7 +3,7 @@ import './hero.css';
 
 const recipes = [
   {
-    img: "https://www.177milkstreet.com/assets/site/Recipes/_large/Pakistani-Chicken-Karahi.jpg",
+    img: "https://axeilbolupfqpqkjaetz.supabase.co/storage/v1/object/public/recipe-images/hero-chicken-karahi.jpg",
     title: "Chicken Karahi",
     cardTitle: "Chicken Karahi",
   },
